@@ -21,8 +21,9 @@ namespace Restaurants.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "KiloCalories",
+            name: "KiloCalories",
                 table: "Dishes");
+
         }
     }
 }

@@ -1,10 +1,5 @@
 ﻿using Restaurants.Domain.Entities;
 using Restaurants.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Restaurants.Infrastructure.Seeders
 {
@@ -12,6 +7,7 @@ namespace Restaurants.Infrastructure.Seeders
     {
         public async Task Seed()
         {
+            
             if (await dbContext.Database.CanConnectAsync())
             {
                 if (!dbContext.Restaurants.Any())
@@ -21,9 +17,10 @@ namespace Restaurants.Infrastructure.Seeders
                     await dbContext.SaveChangesAsync();
                 }
             }
+
         }
 
-        private IEnumerable<Restaurant> GetRestaurants()
+        private IEnumerable<Restaurant> GetRestaurants() 
         {
             List<Restaurant> restaurants = [
                 new Restaurant()

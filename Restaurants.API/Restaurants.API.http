@@ -1,9 +1,27 @@
 @Restaurants.API_HostAddress = https://localhost:7122
 
-GET {{Restaurants.API_HostAddress}}/weatherforecast
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/weatherforecast/generate?results=5&minTemp=10&maxTemp=9
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1004
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+{
+
+  "Category": "lol"
+}
+
+###
+//  "Name": "tasty bites",
+//  "Description": "A cozy restaurant",
+//  "category": "International Cuisine",
+//  "HasDelivery": true,
+//  "ContactEmail": "hello@gmail.com",
+//  "ContactNumber": "555-1234",
+//  "City": "New York",
+//  "Street": "123 Min Street",
