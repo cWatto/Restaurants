@@ -5,7 +5,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/1004
+GET {{Restaurants.API_HostAddress}}/api/restaurants/2
 
 ###
 
@@ -25,3 +25,17 @@ Content-Type: application/json
 //  "ContactNumber": "555-1234",
 //  "City": "New York",
 //  "Street": "123 Min Street",
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2000
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/2331
+Content-Type: application/json
+
+{
+  "Name": "KFC Yeetin'",
+  "Description": "Updated description goes here"
+}
+
+###
