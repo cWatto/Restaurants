@@ -17,5 +17,6 @@
     <ProjectReference Include="..\Restaurants.Infrastructure\Restaurants.Infrastructure.csproj" />
 	  
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/azure-deviceupdate-update-manifest-5.json" /></VisualStudio></ProjectExtensions>
 
 </Project>
