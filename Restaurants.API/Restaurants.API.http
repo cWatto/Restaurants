@@ -26,7 +26,7 @@ Content-Type: application/json
 //  "City": "New York",
 //  "Street": "123 Min Street",
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2000
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/1002
 
 ###
 
@@ -36,6 +36,19 @@ Content-Type: application/json
 {
   "Name": "KFC Yeetin'",
   "Description": "Updated description goes here"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurant/2/dishes
+Content-Type: application/json
+
+{
+    "Name": "Mom's Spaghetti",
+    "Description": "M&Ms dessert included",
+    "Price": 32,
+    "KiloCalories": 1500
+  
 }
 
 ###
