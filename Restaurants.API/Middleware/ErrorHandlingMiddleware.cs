@@ -10,17 +10,24 @@ public class ErrorHandlingMiddleware(ILogger<ErrorHandlingMiddleware> logger) : 
         try
         {
             await next.Invoke(context);
-
-        } catch (NotFoundException notFound) {
+        }
+        catch (ForbidException)
+        {
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            await context.Response.WriteAsync("Access Forbidden");
+        }
+        catch (NotFoundException notFound)
+        {
             context.Response.StatusCode = StatusCodes.Status404NotFound;
             await context.Response.WriteAsync(notFound.Message);
             logger.LogWarning(notFound.Message);
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             logger.LogError(ex, ex.Message);
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
             await context.Response.WriteAsync("Something went wrong");
         }
-      
+
     }
 }
