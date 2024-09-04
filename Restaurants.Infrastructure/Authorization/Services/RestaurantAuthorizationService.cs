@@ -2,6 +2,7 @@
 using Restaurants.Application.Users;
 using Restaurants.Domain.Constants;
 using Restaurants.Domain.Entities;
+using Restaurants.Domain.Interfaces;
 
 namespace Restaurants.Infrastructure.Authorization.Services;
 
@@ -35,4 +36,5 @@ public class RestaurantAuthorizationService(ILogger<RestaurantAuthorizationServi
 
         return false;
     }
+
 }

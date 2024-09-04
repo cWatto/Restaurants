@@ -19,12 +19,13 @@ public class RestaurantsController(IMediator mediator) : ControllerBase
 {
     [HttpGet]
     [Authorize(Policy = PolicyNames.CreatedTwoPlusRestaurants)]
-    public async Task<ActionResult<IEnumerable<RestaurantDto>>> GetAll()
+    public async Task<ActionResult<IEnumerable<RestaurantDto>>> GetAll([FromQuery] GetAllRestaurantsQuery query)
     {
         await Task.Delay(5000);
         var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
         return Ok(restaurants);
     }
+
     [Authorize(Policy = PolicyNames.HasNationality)]
     [HttpGet("{id}")]
     public async Task<ActionResult<RestaurantDto>> Get(int id)
